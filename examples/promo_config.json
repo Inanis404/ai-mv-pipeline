@@ -1,0 +1,70 @@
+{
+  "root": "..",
+  "work": "_work",
+  "out": "showreel/AI_MV_Showreel.mp4",
+  "width": 1920, "height": 1080, "fps": 30,
+  "crf": 18, "preset": "veryfast",
+  "target_mean_db": -17,
+  "accent": [255, 190, 92],
+  "segment_seconds": 8,
+  "fonts": {
+    "display": "fonts/DelaGothicOne-Regular.ttf",
+    "serif": "fonts/NotoSerifSC_wght_.ttf",
+    "sans": "fonts/NotoSansSC_wght_.ttf"
+  },
+  "sources": {
+    "a": "ProjectA/render/project_a_master.mp4",
+    "b": "ProjectB/render/project_b_master.mp4",
+    "c": "ProjectC/render/project_c_master.mp4",
+    "d": "ProjectD/render/project_d_master.mp4"
+  },
+  "montage": {
+    "audio": {"src": "d", "start": 60.0},
+    "shots": [
+      {"src": "a", "t": 150.0, "beats": 2},
+      {"src": "b", "t": 125.0, "beats": 2},
+      {"src": "c", "t": 117.0, "beats": 2},
+      {"src": "d", "t": 63.0, "beats": 2},
+      {"src": "a", "t": 148.0, "beats": 2},
+      {"src": "b", "t": 96.0, "beats": 2},
+      {"src": "c", "t": 124.0, "beats": 2},
+      {"src": "d", "t": 23.0, "beats": 2},
+      {"src": "b", "t": 121.0, "beats": 1, "flash": true},
+      {"src": "c", "t": 134.0, "beats": 1},
+      {"src": "a", "t": 151.0, "beats": 1, "flash": true},
+      {"src": "d", "t": 29.0, "beats": 1},
+      {"src": "b", "t": 98.0, "beats": 1, "flash": true},
+      {"src": "c", "t": 136.0, "beats": 1},
+      {"src": "a", "t": 216.0, "beats": 1, "flash": true},
+      {"src": "d", "t": 26.0, "beats": 1}
+    ]
+  },
+  "title": {
+    "beats": 8,
+    "bg": {"src": "d", "t": 66.0},
+    "lines": ["AI  MV  PIPELINE", "一首歌，自动出一支 MV", "歌曲分析 · 分镜 · 关键帧 · 图生视频 · 代码合成"]
+  },
+  "segments": [
+    {"src": "a", "start": 72.0, "dur": 8,  "title": "Title A", "sub": "subtitle", "tag": "关键帧 · H3 图生视频 · 调色"},
+    {"src": "b", "start": 27.5, "dur": 10, "title": "Title B", "sub": "subtitle", "tag": "厚涂关键帧 · H3 首尾帧 · 逐字歌词"},
+    {"src": "c", "start": 65.5, "dur": 10, "title": "Title C", "sub": "subtitle", "tag": "代码绘制信息图 · 动态排版 · 节拍同步"},
+    {"src": "d", "start": 141.8, "dur": 10, "title": "Title D", "sub": "subtitle", "tag": "轨迹特效 · 歌词排版 · WebGL"}
+  ],
+  "pipeline": {
+    "heading": "管线：从一首歌到一支 MV",
+    "step_seconds": 0.75,
+    "hold_seconds": 2.2,
+    "bg": {"src": "a", "t": 140.0},
+    "steps": [
+      ["听歌", "节拍 · 段落 · 冲击点"],
+      ["歌词", "Whisper / MMS 逐字对齐"],
+      ["概念 + 分镜", "shots.py → STORYBOARD.md"],
+      ["关键帧", "图像模型 + 角色参考"],
+      ["图生视频", "MiniMax H3 · ComfyUI 首尾帧"],
+      ["代码合成", "时间线 · 歌词排版 · 后期"],
+      ["审片", "联系表 · 逐秒审查 · 补帧"],
+      ["交付", "16:9 母版 · 分享版 · 9:16"]
+    ]
+  },
+  "end": {"seconds": 4.0, "heading": "同一条 AI 管线", "items": [], "foot": ""}
+}
